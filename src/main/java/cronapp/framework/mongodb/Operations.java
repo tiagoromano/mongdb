@@ -11,8 +11,7 @@ import org.bson.Document;
 import java.util.function.Consumer;
 import com.mongodb.client.*;
 import com.mongodb.client.model.UpdateOptions;
-import com.mongodb.client.result.UpdateResult;
-import com.mongodb.client.result.DeleteResult;
+
 
 /**
  * Classe que representa ...
@@ -26,14 +25,12 @@ import com.mongodb.client.result.DeleteResult;
 @CronapiMetaData
 public final class Operations {
 
-	private static final Logger log = LoggerFactory.getLogger(Operations.class);
-
 	public static Var find(Var uriConnection, Var database, Var collection, Var filter) {
 
 
-       try (MongoClient mongoClient = MongoClients.create(uriConnection.getObjectAsString())) {
-            MongoDatabase mongoDatabase = mongoClient.getDatabase(database.getObjectAsString());
-            MongoCollection<Document> mongoCollection = mongoDatabase.getCollection(collection.getObjectAsString());
+       try (var mongoClient = MongoClients.create(uriConnection.getObjectAsString())) {
+            var mongoDatabase = mongoClient.getDatabase(database.getObjectAsString());
+            var mongoCollection = mongoDatabase.getCollection(collection.getObjectAsString());
            
 			var parser = new JsonParser();
 			var array = new JsonArray();
@@ -55,41 +52,41 @@ public final class Operations {
 	}
 
 	public static Var insert(Var uriConnection, Var database, Var collection, Var jsonDocument) {
-		try (MongoClient mongoClient = MongoClients.create(uriConnection.getObjectAsString())) {
-            MongoDatabase mongoDatabase = mongoClient.getDatabase(database.getObjectAsString());
+		try (var mongoClient = MongoClients.create(uriConnection.getObjectAsString())) {
+            var mongoDatabase = mongoClient.getDatabase(database.getObjectAsString());
 			
-			MongoCollection<Document> mongoCollection = mongoDatabase.getCollection(collection.getObjectAsString());
-			Document document = Document.parse(jsonDocument.getObjectAsString());
+			var<Document> mongoCollection = mongoDatabase.getCollection(collection.getObjectAsString());
+			var document = Document.parse(jsonDocument.getObjectAsString());
 
 			mongoCollection.insertOne(document);
-			Object id = document.get("_id");
+			var id = document.get("_id");
 			return Var.valueOf(id);
         } 
 	}
 
 	public static Var update(Var uriConnection, Var database, Var collection, Var filter, Var jsonDocument) {
-		try (MongoClient mongoClient = MongoClients.create(uriConnection.getObjectAsString())) {
-            MongoDatabase mongoDatabase = mongoClient.getDatabase(database.getObjectAsString());
-			MongoCollection<Document> mongoCollection = mongoDatabase.getCollection(collection.getObjectAsString());
+		try (var mongoClient = MongoClients.create(uriConnection.getObjectAsString())) {
+            var mongoDatabase = mongoClient.getDatabase(database.getObjectAsString());
+			var mongoCollection = mongoDatabase.getCollection(collection.getObjectAsString());
 
-			Document mongoFilter = Document.parse(filter.getObjectAsString());
-			Document updateDocument = Document.parse(jsonDocument.getObjectAsString());
-			UpdateOptions options = new UpdateOptions().upsert(true);
+			var mongoFilter = Document.parse(filter.getObjectAsString());
+			var updateDocument = Document.parse(jsonDocument.getObjectAsString());
+			var options = new UpdateOptions().upsert(true);
 			
 			
-			UpdateResult result = mongoCollection.updateOne(mongoFilter, updateDocument, options);
+			var result = mongoCollection.updateOne(mongoFilter, updateDocument, options);
 			
 			return Var.valueOf(result.getModifiedCount());
         } 
 	}
 
 	public static Var delete(Var uriConnection, Var database, Var collection, Var filter) {
-		try (MongoClient mongoClient = MongoClients.create(uriConnection.getObjectAsString())) {
-            MongoDatabase mongoDatabase = mongoClient.getDatabase(database.getObjectAsString());
-			MongoCollection<Document> mongoCollection = mongoDatabase.getCollection(collection.getObjectAsString());
+		try (var mongoClient = MongoClients.create(uriConnection.getObjectAsString())) {
+            var mongoDatabase = mongoClient.getDatabase(database.getObjectAsString());
+			var mongoCollection = mongoDatabase.getCollection(collection.getObjectAsString());
 
-			Document mongoFilter = Document.parse(filter.getObjectAsString());
-			DeleteResult result = mongoCollection.deleteOne(mongoFilter);
+			var mongoFilter = Document.parse(filter.getObjectAsString());
+			var result = mongoCollection.deleteOne(mongoFilter);
 			
 			return Var.valueOf(result.getDeletedCount());
         } 

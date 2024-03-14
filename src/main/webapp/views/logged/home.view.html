@@ -9,7 +9,7 @@
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar, #navbar2" aria-expanded="false" aria-controls="navbar"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
           <a class="component-holder ng-binding ng-scope navbar-brand" data-component="crn-image" ng-click="cronapi.screen.changeView('#/home', [])"> <img alt="{{'Home.view.Home' | translate}}" src="public/assets/app-logo-login.svg" id="crn-navbar-logo" data-component="crn-image"> </a>
       </div>
-      <div id="navbar" class="navbar-collapse collapse float-left-desktop" >
+      <div id="navbar" class="navbar-collapse collapse float-left-desktop">
         <ul class="nav navbar-nav" style="float:none">
           <li>
               <cron-dynamic-menu id="crn-dynamic-menu-home" class="component-holder" data-component="crn-dynamic-menu" options="{&quot;escope&quot;:&quot;WEB&quot;,&quot;subMenuOptions&quot;:[{&quot;id&quot;:&quot;1h85bvnhg7511&quot;,&quot;name&quot;:&quot;Home&quot;,&quot;title&quot;:&quot;{{'Home.view.Home' | translate}}&quot;,&quot;iconClass&quot;:&quot;fa fa-home&quot;,&quot;action&quot;:&quot;cronapi.screen.changeView('#/home', [])&quot;,&quot;level&quot;:1,&quot;textPosition&quot;:&quot;left&quot;,&quot;imagePosition&quot;:&quot;left&quot;,&quot;contentTheme&quot;:&quot;light&quot;,&quot;iconTheme&quot;:&quot;light&quot;,&quot;menuItems&quot;:[]},{&quot;id&quot;:&quot;1iynbo1wq8twj&quot;,&quot;name&quot;:&quot;Admin&quot;,&quot;title&quot;:&quot;{{'Home.view.Admin' | translate}}&quot;,&quot;iconClass&quot;:&quot;fa fa-user&quot;,&quot;security&quot;:&quot;visible : Administrators, enabled : Administrators&quot;,&quot;action&quot;:&quot;&quot;,&quot;level&quot;:1,&quot;textPosition&quot;:&quot;left&quot;,&quot;imagePosition&quot;:&quot;left&quot;,&quot;contentTheme&quot;:&quot;light&quot;,&quot;iconTheme&quot;:&quot;light&quot;,&quot;menuItems&quot;:[{&quot;id&quot;:&quot;t4fkwdjzlcmu&quot;,&quot;name&quot;:&quot;Users&quot;,&quot;title&quot;:&quot;{{'Home.view.Users' | translate}}&quot;,&quot;iconClass&quot;:&quot;fa fa-user&quot;,&quot;security&quot;:&quot;visible : Administrators, enabled : Administrators&quot;,&quot;action&quot;:&quot;cronapi.screen.changeView('#/home/admin/user', [])&quot;,&quot;level&quot;:2,&quot;textPosition&quot;:&quot;left&quot;,&quot;imagePosition&quot;:&quot;left&quot;,&quot;contentTheme&quot;:&quot;light&quot;,&quot;iconTheme&quot;:&quot;light&quot;,&quot;menuItems&quot;:[]},{&quot;id&quot;:&quot;s4xeikriw2et&quot;,&quot;name&quot;:&quot;AuditLog&quot;,&quot;title&quot;:&quot;{{'AuditLog' | translate}}&quot;,&quot;iconClass&quot;:&quot;fa fa-list-ol&quot;,&quot;security&quot;:&quot;visible : Administrators, enabled : Administrators&quot;,&quot;action&quot;:&quot;cronapi.screen.changeView('#/home/admin/auditlog.search', [])&quot;,&quot;level&quot;:2,&quot;textPosition&quot;:&quot;left&quot;,&quot;imagePosition&quot;:&quot;left&quot;,&quot;contentTheme&quot;:&quot;light&quot;,&quot;iconTheme&quot;:&quot;light&quot;,&quot;menuItems&quot;:[]},{&quot;id&quot;:&quot;1jeqhtersh46d&quot;,&quot;name&quot;:&quot;Roles&quot;,&quot;title&quot;:&quot;{{'Home.view.Roles' | translate}}&quot;,&quot;iconClass&quot;:&quot;fa fa-users&quot;,&quot;security&quot;:&quot;visible : Administrators, enabled : Administrators&quot;,&quot;action&quot;:&quot;cronapi.screen.changeView('#/home/admin/role', [])&quot;,&quot;level&quot;:2,&quot;textPosition&quot;:&quot;left&quot;,&quot;imagePosition&quot;:&quot;left&quot;,&quot;contentTheme&quot;:&quot;light&quot;,&quot;iconTheme&quot;:&quot;light&quot;,&quot;menuItems&quot;:[]}]}]}">Dynamic Menu</cron-dynamic-menu>
@@ -28,7 +28,7 @@
   </nav>
 </div>
 <div ui-view="" id="main-view" tabindex="-1" role="main" class="container-fluid main-view main-view-horizontal">
-    <h1 class="component-holder text-left h3 title">{{'Home.view.Home' | translate}}</h1>
+    <h1 class="component-holder text-left h3 title">{{'Home.view.Home' | translate}}</h1><div class="component-holder ng-scope" data-component="crn-button" id="crn-button-1005270"><button class="btn k-button btn-block btn-default" ng-click="cronapi.server('blockly.MongoExe1.Executar').run()" xattr-fullsize="btn-block" xattr-theme="btn-default" xattr-disabled=""><i class="glyphicon glyphicon-home" icon-theme=""></i> <span class="" text-theme="">Button</span></button></div>
 </div>
 <div class="modal fade" id="modalPassword">
   <div class="modal-dialog">
@@ -39,7 +39,7 @@
       </div>
       <div class="modal-body">
         <form class="form-validation" autocomplete="off" name="form" role="form">
-          <input type="hidden" name="csrf_token" value="CIwNZNlR4XbisJF39I8yWnWX9wX4WFoz" />
+          <input type="hidden" name="csrf_token" value="CIwNZNlR4XbisJF39I8yWnWX9wX4WFoz">
           <div class="text-danger wrapper text-center" ng-show="authError">
           </div>
           <div class="list-group list-group-sm">

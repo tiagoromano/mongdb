@@ -148,6 +148,31 @@
             <groupId>io.cronapp</groupId>
             <artifactId>cronapp-framework-auditlog</artifactId>
         </dependency>
+        
+        <!-- https://mvnrepository.com/artifact/org.mongodb/mongo-java-driver -->
+<!-- https://mvnrepository.com/artifact/org.mongodb/mongo-java-driver -->
+
+
+        <dependency>
+            <groupId>org.mongodb</groupId>
+            <artifactId>mongo-java-driver</artifactId>
+            <version>3.12.14</version>
+        </dependency>
+        <!-- <dependency>
+            <groupId>org.mongodb</groupId>
+            <artifactId>mongodb-driver-sync</artifactId>
+            <version>5.0.0</version>
+        </dependency>   -->
+        
+
+
+        <!-- https://mvnrepository.com/artifact/org.springframework.data/spring-data-mongodb -->
+<!-- <dependency>
+    <groupId>org.springframework.data</groupId>
+    <artifactId>spring-data-mongodb</artifactId>
+    <version>4.2.3</version>
+</dependency> -->
+    
     </dependencies>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
